@@ -21,16 +21,17 @@ app.use(express.json({ limit: '10mb' }))
 //         credentials:true
 //     }
 // ))
-const allowedOrigins = ['https://xproxect.vercel.app'];
-app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  }
-}));
+// const allowedOrigins = ['https://xproxect.vercel.app'];
+// app.use(cors({
+//   origin: function (origin, callback) {
+//     if (!origin || allowedOrigins.includes(origin)) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   }
+// }));
+app.use(cors());
 mongoose
     .connect(process.env.MONGO_URL, {
         useNewUrlParser: true,
