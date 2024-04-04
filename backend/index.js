@@ -16,7 +16,7 @@ dotenv.config();
 app.use(express.json({ limit: '10mb' }))
 app.use(cors(
     {
-        origin:["https://deploy-mern-1whq.vercel.app"],
+        origin:["https://xproxect.vercel.app"],
         methods:["POST","GET"],
         credentials:true
     }
