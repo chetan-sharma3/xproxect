@@ -14,13 +14,13 @@ dotenv.config();
 // app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }))
 
 app.use(express.json({ limit: '10mb' }))
-// app.use(cors(
-//     {
-//         origin:["https://xproxect.vercel.app"],
-//         methods:["POST","GET"],
-//         credentials:true
-//     }
-// ))
+app.use(cors(
+    {
+        origin:["https://xproxect.vercel.app/"],
+        methods:["POST","GET"],
+        credentials:true
+    }
+))
 // const allowedOrigins = ['https://xproxect.vercel.app'];
 // app.use(cors({
 //   origin: function (origin, callback) {
@@ -31,7 +31,7 @@ app.use(express.json({ limit: '10mb' }))
 //     }
 //   }
 // }));
-app.use(cors());
+// app.use(cors());
 mongoose
     .connect(process.env.MONGO_URL, {
         useNewUrlParser: true,
